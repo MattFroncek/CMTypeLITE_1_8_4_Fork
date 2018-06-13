@@ -26,7 +26,7 @@ namespace TypeLite {
         /// <summary>
         /// Gets collection of formatters for individual TsTypes
         /// </summary>
-        public IReadOnlyDictionary<Type, TsTypeFormatter> Formaters {
+        public TypeLite.ReadOnlyDictionary.IReadOnlyDictionary<Type, TsTypeFormatter> Formaters {
             get {
                 return new ReadOnlyDictionaryWrapper<Type, TsTypeFormatter>(_typeFormatters._formatters);
             }
@@ -344,10 +344,34 @@ namespace TypeLite {
 
             using (sb.IncreaseIndentation()) {
                 int i = 1;
+                string valuesList = "";
+                string descriptionsList = "";
+
                 foreach (var v in enumModel.Values) {
                     _docAppender.AppendEnumValueDoc(sb, v);
-                    sb.AppendLineIndented(string.Format(i < enumModel.Values.Count ? "{0} = {1}," : "{0} = {1}", v.Name, v.Value));
+                    bool appendComma = enumModel.IsOutputValuesList || enumModel.IsOutputDescriptionsList || (i < enumModel.Values.Count);
+                    if (enumModel.IsValueAsStringOfName) {
+                        sb.AppendLineIndented(string.Format(appendComma ? "{0} = '{0}'," : "{0} = '{0}'", v.Name));
+                        if (enumModel.IsOutputValuesList) {
+                            valuesList += string.Format((i < enumModel.Values.Count) ? "{0}|" : "{0}", v.Name);
+                        }
+                    }
+                    else {
+                        sb.AppendLineIndented(string.Format(appendComma ? "{0} = {1}," : "{0} = {1}", v.Name, v.Value));
+                        if (enumModel.IsOutputValuesList) {
+                            valuesList += string.Format(i < enumModel.Values.Count ? "{0}|" : "{0}", v.Value);
+                        }
+                    }
+                    if (enumModel.IsOutputDescriptionsList) {
+                        descriptionsList += string.Format(i < enumModel.Values.Count ? "{0}|" : "{0}", v.Description);
+                    }
                     i++;
+                }
+                if (enumModel.IsOutputValuesList) {
+                    sb.AppendLineIndented(string.Format(enumModel.IsOutputDescriptionsList ? "_ValuesList = '{0}'," : "_ValuesList = '{0}'", valuesList));
+                }
+                if (enumModel.IsOutputDescriptionsList) {
+                    sb.AppendLineIndented(string.Format("_DescriptionsList = '{0}'", descriptionsList));
                 }
             }
 

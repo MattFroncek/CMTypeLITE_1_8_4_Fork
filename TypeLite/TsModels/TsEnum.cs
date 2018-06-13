@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using TypeLite.Extensions;
 
 namespace TypeLite.TsModels {
@@ -15,10 +14,26 @@ namespace TypeLite.TsModels {
 		/// </summary>
 		public bool IsIgnored { get; set; }
 
-		/// <summary>
-		/// Gets collection of properties of the class.
-		/// </summary>
-		public ICollection<TsEnumValue> Values { get; private set; }
+        /// <summary>
+        /// Gets or sets bool value indicating whether enum should be generated with Values as the String.
+        /// </summary>
+        public bool IsValueAsStringOfName { get; set; }
+
+        /// <summary>
+        /// Gets or sets whether to output an enumerator called _ValueList with a list of values pipe separated. Example: _ValueList = 'HCollars|DCollars|CCollars'
+        /// </summary>
+        public bool IsOutputValuesList { get; set; }
+
+        /// <summary>
+        /// Gets or sets whether to output an enumerator called _DescriptionList with a list of descriptions pipe separated. Example: _DescriptionList = 'Horse Collars|Dog Collars|Cat Collars'
+        /// Values come from attribute on members
+        /// </summary>
+        public bool IsOutputDescriptionsList { get; set; }
+
+        /// <summary>
+        /// Gets collection of properties of the class.
+        /// </summary>
+        public ICollection<TsEnumValue> Values { get; private set; }
 
 		/// <summary>
 		/// Initializes a new instance of the TsEnum class with the specific CLR enum.
@@ -41,8 +56,12 @@ namespace TypeLite.TsModels {
 				if (!string.IsNullOrEmpty(attribute.Module)) {
 					this.Module.Name = attribute.Module;
 				}
-			}
-		}
+
+                this.IsValueAsStringOfName = attribute.ValueAsStringOfName;
+                this.IsOutputValuesList = attribute.OutputValuesList;
+                this.IsOutputDescriptionsList = attribute.OutputDescriptionsList;
+            }
+        }
 
 		/// <summary>
 		/// Retrieves a collection of possible value of the enum.

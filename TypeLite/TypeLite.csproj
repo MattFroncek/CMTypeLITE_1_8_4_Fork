@@ -66,6 +66,7 @@
     <Compile Include="ReadOnlyDictionary\ReadOnlyDictionaryWrapper.cs" />
     <Compile Include="ScriptBuilder.cs" />
     <Compile Include="TsClassAttribute.cs" />
+    <Compile Include="TsEnumMemberAttribute.cs" />
     <Compile Include="TsEnumAttribute.cs" />
     <Compile Include="TsGeneratorOutput.cs" />
     <Compile Include="TsIgnoreAttribute.cs" />

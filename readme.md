@@ -22,6 +22,56 @@ The library is distributed under MIT license.
 ## Changelog
 
 
+### Version 1.8.5       (6.13. 2018)
+Added       Support for       
+			[TsEnum(ValueAsStringOfName = true, OutputValuesList = true, OutputDescriptionsList = true)]
+	        [TsEnumMember(Description = "Unknown")] 
+			Creates Something like this:
+			export const enum TenantStanding {
+					Unknown = 'Unknown',
+					Active = 'Active',
+					Assessment = 'Assessment',
+					Inactive = 'Inactive',
+					Test = 'Test',
+					_ValuesList = 'Unknown|Active|Assessment|Inactive|Test',
+					_DescriptionsList = 'Unknown|Active|Assessment|Inactive|Test'
+			}
+			From:
+			[TsEnum(ValueAsStringOfName = true, OutputValuesList = true, OutputDescriptionsList = true)]
+			[JsonConverter(typeof(StringEnumConverter))]
+			public enum TenantStanding
+			{
+			    /// <summary>
+			    /// No Standing Known
+			    /// </summary>
+			    [TsEnumMember(Description = "Unknown")]
+			    Unknown,
+
+			    /// <summary>
+			    /// Active
+			    /// </summary>
+			    [TsEnumMember(Description = "Active")]
+			    Active,
+
+			    /// <summary>
+			    /// Assessment
+			    /// </summary>
+			    [TsEnumMember(Description = "Assessment")]
+			    Assessment,
+
+			    /// <summary>
+			    /// Inactive
+			    /// </summary>
+			    [TsEnumMember(Description = "Inactive")]
+			    Inactive,
+
+			    /// <summary>
+			    /// Test
+			    /// </summary>
+			    [TsEnumMember(Description = "Test")]
+			    Test
+			}
+
 ### Version 1.8.4       (2. 3. 2017)
 Fixed       #128 nested inner classes has incorrect module name
 

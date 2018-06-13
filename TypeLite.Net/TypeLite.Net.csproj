@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TypeLite</RootNamespace>
     <AssemblyName>TypeLite</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -52,9 +54,6 @@
     </Compile>
     <Compile Include="..\TypeLite\AlternateGenerators\TsKnockoutModelGenerator.cs">
       <Link>AlternateGenerators\TsKnockoutModelGenerator.cs</Link>
-    </Compile>
-    <Compile Include="..\TypeLite\Extensions\MemberInfoExtensions.cs">
-      <Link>Extensions\MemberInfoExtensions.cs</Link>
     </Compile>
     <Compile Include="..\TypeLite\Extensions\SystemTypeKindExtensions.cs">
       <Link>Extensions\SystemTypeKindExtensions.cs</Link>
@@ -88,6 +87,9 @@
     </Compile>
     <Compile Include="..\TypeLite\TsEnumAttribute.cs">
       <Link>TsEnumAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\TypeLite\TsEnumMemberAttribute.cs">
+      <Link>TsEnumMemberAttribute.cs</Link>
     </Compile>
     <Compile Include="..\TypeLite\TsGenerator.cs">
       <Link>TsGenerator.cs</Link>

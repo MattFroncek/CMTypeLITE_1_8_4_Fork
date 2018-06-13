@@ -18,5 +18,23 @@ namespace TypeLite {
 		/// Gets or sets name of the module for the enum. If it isn't set, the namespace is used.
 		/// </summary>
 		public string Module { get; set; }
-	}
+
+        /// <summary>
+        /// Gets or sets whether to set the value equal to a string of the enum name.
+        /// </summary>
+        public bool ValueAsStringOfName { get; set; }
+
+        /// <summary>
+        /// Gets or sets whether to output an enumerator called _ValuesList with a list of values pipe separated. Example: _ValuesList = 'HCollars|DCollars|CCollars'
+        /// </summary>
+        public bool OutputValuesList { get; set; }
+
+        /// <summary>
+        /// Gets or sets whether to output an enumerator called _DescriptionsList with a list of descriptions pipe separated. Example: _DescriptionsList = 'Horse Collars|Dog Collars|Cat Collars'
+        /// Values come from attribute on enumerators like: 
+        /// [TsEnumMemberAttribute(Description="Horse Collars")]
+        /// HCollars = 1,
+        /// </summary>
+        public bool OutputDescriptionsList { get; set; }
+    }
 }

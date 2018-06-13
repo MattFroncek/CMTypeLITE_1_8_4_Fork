@@ -19,6 +19,8 @@ namespace TypeLite.TsModels {
 		/// </summary>
 		public string Value { get; private set; }
 
+        public string Description { get; private set; }
+
         public FieldInfo Field { get; private set; }
         
         /// <summary>
@@ -35,9 +37,15 @@ namespace TypeLite.TsModels {
         public TsEnumValue(FieldInfo field) {
             this.Field = field;
             this.Name = field.Name;
-		    
-            var value = field.GetValue(null);
+            this.Description = this.Name;
 
+            TsEnumMemberAttribute displayValueAttribute = Attribute.GetCustomAttribute(field, typeof(TsEnumMemberAttribute)) as TsEnumMemberAttribute;
+            if (displayValueAttribute != null)
+            {
+                this.Description = displayValueAttribute.Description;
+            }
+
+            var value = field.GetValue(null);
 		    var valueType = Enum.GetUnderlyingType(value.GetType());
 			if (valueType == typeof(byte)) {
 				this.Value = ((byte)value).ToString();
@@ -64,5 +72,5 @@ namespace TypeLite.TsModels {
 				this.Value = ((ulong)value).ToString();
 			}
 		}
-	}
+    }
 }
