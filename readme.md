@@ -24,10 +24,13 @@ The library is distributed under MIT license.
 
 ### Version 1.8.5       (6.13. 2018)
 Added       Support for:      
-```typescript
+```c#
 [TsEnum(ValueAsStringOfName = true, OutputValuesList = true, OutputDescriptionsList = true)]
 [TsEnumMember(Description = "Unknown")] 
+```
+
 Creates Something like this:
+```typescript
 export const enum TenantStanding {
 		Unknown = 'Unknown',
 		Active = 'Active',
