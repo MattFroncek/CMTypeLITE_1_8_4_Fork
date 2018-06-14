@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
-        <id>TypeLite</id>
+        <id>TypeLite-CM-Fork</id>
         <version>1.8.5</version>
-        <title>TypeLITE</title>
-        <authors>Lukas Kabrt and contributors</authors>
+        <title>TypeLITE-CM-Fork</title>
+        <authors>Lukas Kabrt and contributors (CloudMedSolutions Fork)</authors>
         <licenseUrl>http://type.litesolutions.net/license</licenseUrl>
         <projectUrl>http://type.litesolutions.net</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>Generates TypeScript interfaces from .NET classes</description>
+        <description>Generates TypeScript interfaces from .NET classes (CloudMedSolutions Fork)</description>
         <summary>Generates TypeScript interfaces from .NET classes. Please note in Visual Studio 2015 Update 2 TypeLITE works only if the project targets full .NET framework.</summary>
         <copyright>Lukas Kabrt</copyright>
         <tags>TypeScript</tags>

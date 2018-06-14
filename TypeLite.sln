@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeLite", "TypeLite\TypeLite.csproj", "{43DCB624-F929-4572-97A3-6B14AC6AD158}"
 EndProject
@@ -12,6 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6F2E8A
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
+		.nuget\nugetpack.cmd = .nuget\nugetpack.cmd
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeLite.Demo", "TypeLite.Demo\TypeLite.Demo.csproj", "{79D046FE-CE35-47FC-9DA6-C0E7AA2061F9}"
@@ -80,5 +81,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7A0F2704-7880-4346-BAEC-B3872390F73B} = {3FE58756-C47E-449E-A807-97B289A4B781}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A317EC0E-5F74-4107-9A40-3B51135DA4AD}
 	EndGlobalSection
 EndGlobal

@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
-        <id>TypeLite.Lib</id>
+        <id>TypeLite-CM-Fork.Lib</id>
         <version>1.8.5</version>
-        <title>TypeLITE.Library</title>
-        <authors>Lukas Kabrt and contributors(CloudMedSolutions Fork)</authors>
+        <title>TypeLITE-CM-Fork.Library</title>
+        <authors>Lukas Kabrt and contributors (CloudMedSolutions Fork)</authors>
         <licenseUrl>http://type.litesolutions.net/license</licenseUrl>
         <projectUrl>http://type.litesolutions.net</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>Generates TypeScript interfaces from .NET classes. This package contains only binaries without T4 templates.</description>
+        <description>Generates TypeScript interfaces from .NET classes. This package contains only binaries without T4 templates. (CloudMedSolutions Fork)</description>
         <summary>Generates TypeScript interfaces from .NET classes</summary>
         <copyright>Lukas Kabrt</copyright>
         <tags>TypeScript</tags>
