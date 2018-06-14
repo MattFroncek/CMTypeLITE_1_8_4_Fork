@@ -22,7 +22,7 @@ The library is distributed under MIT license.
 ## Changelog
 
 
-### Version 1.8.5       (6.13. 2018)
+### Version 1.8.4       (6.13. 2018) CloudMedSolutions-Fork
 Added       Support for:      
 ```c#
 [TsEnum(ValueAsStringOfName = true, OutputValuesList = true, OutputDescriptionsList = true)]
