@@ -24,9 +24,8 @@ The library is distributed under MIT license.
 
 ### Version 1.8.5       (6.13. 2018)
 Added       Support for       
-			>
+			```typescript
 			[TsEnum(ValueAsStringOfName = true, OutputValuesList = true, OutputDescriptionsList = true)]
-			>
 	        [TsEnumMember(Description = "Unknown")] 
 			Creates Something like this:
 			export const enum TenantStanding {
@@ -38,7 +37,9 @@ Added       Support for
 					_ValuesList = 'Unknown|Active|Assessment|Inactive|Test',
 					_DescriptionsList = 'Unknown|Active|Assessment|Inactive|Test'
 			}
+			```
 			From:
+			```c#
 			[TsEnum(ValueAsStringOfName = true, OutputValuesList = true, OutputDescriptionsList = true)]
 			[JsonConverter(typeof(StringEnumConverter))]
 			public enum TenantStanding
@@ -73,7 +74,7 @@ Added       Support for
 			    [TsEnumMember(Description = "Test")]
 			    Test
 			}
-
+			```
 ### Version 1.8.4       (2. 3. 2017)
 Fixed       #128 nested inner classes has incorrect module name
 
